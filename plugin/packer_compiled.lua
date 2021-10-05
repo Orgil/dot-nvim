@@ -89,6 +89,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+  },
+  ["lsp-colors.nvim"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim"
+  },
   ["lspsaga.nvim"] = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
@@ -112,6 +120,10 @@ _G.packer_plugins = {
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag"
   },
   ["nvim-web-devicons"] = {
     loaded = true,

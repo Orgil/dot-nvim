@@ -6,7 +6,7 @@ local sorters = require "telescope.sorters"
 local previewers = require "telescope.previewers"
 local transform_mod = require("telescope.actions.mt").transform_mod
 
-vim.fn.setenv("FZF_DEFAULT_COMMAND", "rg --files --hidden --glob '!.git/**'")
+--v:lua insert_space()vim.fn.setenv("FZF_DEFAULT_COMMAND", "rg --files --hidden --glob '!.git/**'")
 
 telescope.setup {
   defaults = {
@@ -23,11 +23,7 @@ telescope.setup {
       n = {
         ["<esc>"] = actions.close
       }
-    },
-    -- file_sorter = sorters.get_fzy_sorter,
-    file_previewer = previewers.vim_buffer_cat.new,
-    grep_previewer = previewers.vim_buffer_vimgrep.new,
-    qflist_previewer = previewers.vim_buffer_qflist.new
+    }
   },
   extensions = {
     fzf = {
@@ -42,17 +38,6 @@ telescope.setup {
     -- }
   }
 }
-
-function TelescopeOpen(fn)
-  require "settings.utils".move_cursor_from_tree()
-  finders[fn](require("telescope.themes").get_dropdown({previewer = false}))
-end
-
-function TelescopeOpenPrewiev(fn)
-  require "settings.utils".move_cursor_from_tree()
-  finders[fn](require("telescope.themes").get_dropdown({}))
-end
-
 -- map("n", "<C-f>", "<CMD>lua TelescopeOpenPrewiev('find_files')<CR>")
 -- map("n", "<C-p>", "<CMD>lua TelescopeOpenPrewiev('git_files')<CR>")
 -- map("n", "<C-w>", "<CMD>lua TelescopeOpenPrewiev('oldfiles')<CR>")
@@ -60,8 +45,6 @@ end
 -- map("n", "<leader>bt", "<CMD>lua TelescopeOpenPrewiev('current_buffer_tags')<CR>")
 -- map("n", "<leader>cc", "<CMD>lua TelescopeOpen('commands')<CR>")
 -- map("n", "<leader>cb", "<CMD>lua TelescopeOpen('builtin')<CR>")
-map("n", "<leader>sw", "<CMD>lua require('telescope.builtin').grep_string { search = vim.fn.expand('<cword>')}<CR>")
-map("n", "<leader>st", "<CMD>lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')})<CR>")
 -- map("n", "<leader>sw", "<CMD>lua TelescopeOpenPrewiev('grep_string')<CR>")
 
 -- map("n", "<leader>sg", "<CMD>lua TelescopeOpenPrewiev('live_grep')<CR>")
@@ -78,26 +61,6 @@ map("n", "<leader>st", "<CMD>lua require('telescope.builtin').grep_string({ sear
 -- map("n", "<leader>cv", "<CMD>lua TelescopeOpenPrewiev('vim_options')<CR>")
 
 -- map("n", "<leader>",  "<CMD>lua TelescopeOpenPrewiev('')<CR>")
-
-function _G.fzf_omni()
-  if vim.fn.isdirectory(".git") == 1 then
-    return "git_files"
-  else
-    return "find_files"
-  end
-end
-
-map("n", "<C-f>", ":lua TelescopeOpenPrewiev(fzf_omni())<CR>")
-
-function _G.show_diagnostic(opts)
-  opts = opts or {}
-  vim.lsp.diagnostic.set_loclist({open_loclis = false})
-
-  require "settings.utils".move_cursor_from_tree()
-  finders.loclist(require("telescope.themes").get_dropdown({}))
-end
-
-map("n", "<leader>d", "<cmd>lua show_diagnostic()<CR>", {})
 
 require("telescope").load_extension("fzf")
 

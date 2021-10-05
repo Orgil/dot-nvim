@@ -44,10 +44,19 @@ use {
 use 'folke/lsp-colors.nvim'
 use 'glepnir/dashboard-nvim'
 use 'windwp/nvim-autopairs'
+use 'windwp/nvim-ts-autotag'
 use 'neovim/nvim-lspconfig'
 use 'tami5/lspsaga.nvim'
 use 'hrsh7th/cmp-nvim-lsp'
 use 'hrsh7th/cmp-buffer'
 use 'hrsh7th/cmp-path'
 use 'hrsh7th/nvim-cmp'
+use 'lukas-reineke/indent-blankline.nvim'
+use {
+  'lewis6991/gitsigns.nvim',
+  requires = {
+    'nvim-lua/plenary.nvim'
+  },
+  -- tag = 'release' -- To use the latest release
+}
 end)

@@ -2,6 +2,12 @@ local npairs = require('nvim-autopairs')
 local map = require"utils".map
 
 npairs.setup{
+  check_ts = true,
+  ts_config = {
+    lua = {'string'},-- it will not add a pair on that treesitter node
+    javascript = {'template_string'},
+    java = false,-- don't check treesitter on java
+  },
   break_line_filetype = nil, -- enable this rule for all filetypes
   pairs_map = {
     ["'"] = "'",
@@ -17,29 +23,3 @@ npairs.setup{
   },
   ignored_next_char = "[%w%.%+%-%=%/%,]"
 }
-
-local check_surroundings = function()
-  local col = vim.fn.col('.')
-  local line = vim.fn.getline('.')
-  local prev_char = line:sub(col - 1, col - 1)
-  local next_char = line:sub(col, col)
-  local pattern = '[%{|%}|%[|%]]'
-
-  if prev_char:match(pattern) and next_char:match(pattern) then
-    return true
-  else
-    return false
-  end
-end
-
- function _G.insert_space()
-  local is_char_present = check_surroundings()
-
-  if is_char_present then
-    return vim.api.nvim_replace_termcodes("  <Left>", true, false, true)
-  end
-
-  return " "
-end
-
-map("i", "<Space>", "v:lua insert_space()", {})
