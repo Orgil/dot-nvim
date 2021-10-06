@@ -89,6 +89,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+  },
+  hop = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/hop"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
@@ -108,6 +116,10 @@ _G.packer_plugins = {
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+  },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -153,9 +165,37 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/trouble.nvim"
   },
+  ["vim-better-whitespace"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-better-whitespace"
+  },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-commentary"
+  },
   ["vim-polyglot"] = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-polyglot"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-repeat"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-surround"
+  },
+  ["vim-visualstar"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-visualstar"
+  },
+  ["vim-wordmotion"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-wordmotion"
+  },
+  ["zen-mode.nvim"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/zen-mode.nvim"
   }
 }
 

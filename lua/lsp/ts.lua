@@ -18,7 +18,6 @@ local on_attach = function(client, server)
 
   map('n','gD','<cmd>lua vim.lsp.buf.declaration()<CR>')
 	map('n','<leader>d','<cmd>lua vim.lsp.buf.definition()<CR>')
-  map('n',';','<cmd>lua vim.lsp.buf.hover()<CR>')
 
   print("'" .. client.name .. "' server attached")
 end

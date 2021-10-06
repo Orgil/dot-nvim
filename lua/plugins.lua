@@ -41,7 +41,7 @@ use {
   "folke/trouble.nvim",
   requires = "kyazdani42/nvim-web-devicons"
 }
-use 'folke/lsp-colors.nvim'
+use 'dietrichm/lsp-colors.nvim'
 use 'glepnir/dashboard-nvim'
 use 'windwp/nvim-autopairs'
 use 'windwp/nvim-ts-autotag'
@@ -59,4 +59,16 @@ use {
   },
   -- tag = 'release' -- To use the latest release
 }
+use {
+  'phaazon/hop.nvim',
+  as = 'hop'
+}
+use 'chaoren/vim-wordmotion'
+use 'tpope/vim-surround'
+use 'tpope/vim-commentary'
+use 'tpope/vim-repeat'
+use 'thinca/vim-visualstar'
+use 'norcalli/nvim-colorizer.lua'
+use 'ntpeters/vim-better-whitespace'
+use 'folke/zen-mode.nvim'
 end)

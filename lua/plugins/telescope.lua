@@ -6,15 +6,12 @@ local sorters = require "telescope.sorters"
 local previewers = require "telescope.previewers"
 local transform_mod = require("telescope.actions.mt").transform_mod
 
---v:lua insert_space()vim.fn.setenv("FZF_DEFAULT_COMMAND", "rg --files --hidden --glob '!.git/**'")
+-- vim.fn.setenv("FZF_DEFAULT_COMMAND", "rg --files --hidden --glob '!.git/**'")
 
 telescope.setup {
   defaults = {
     prompt_prefix = " ❯ ",
     file_ignore_patterns = {".git/*", "node_modules"},
-    path_display = 'shorten',
-    color_devicons = true,
-    winblend = 20,
     mappings = {
       i = {
         ["<esc>"] = actions.close,
@@ -25,19 +22,30 @@ telescope.setup {
       }
     }
   },
+  pickers = {
+    find_files = {
+      theme = "dropdown"
+    },
+    live_grep = {
+      theme = "dropdown",
+    },
+    buffers = {
+      theme = "dropdown"
+    }
+  },
   extensions = {
     fzf = {
-      fuzzy = true,
-      override_generic_sorter = true, -- override the generic sorter
-      override_file_sorter = true, -- override the file sorter
-      case_mode = "smart_case" -- "smart_case" | "ignore_case" | "respect_case"
+      fuzzy = true
     }
-    -- fzy_native = {
-    -- override_generic_sorter = false,
-    -- override_file_sorter = true
-    -- }
   }
 }
+
+map('n', '<c-p>', "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>")
+map('n', '<c-b>', "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>")
+map('n', '<c-f>', '<cmd>Telescope live_grep<cr>')
+
+require('telescope').load_extension('fzf')
+
 -- map("n", "<C-f>", "<CMD>lua TelescopeOpenPrewiev('find_files')<CR>")
 -- map("n", "<C-p>", "<CMD>lua TelescopeOpenPrewiev('git_files')<CR>")
 -- map("n", "<C-w>", "<CMD>lua TelescopeOpenPrewiev('oldfiles')<CR>")
@@ -62,5 +70,4 @@ telescope.setup {
 
 -- map("n", "<leader>",  "<CMD>lua TelescopeOpenPrewiev('')<CR>")
 
-require("telescope").load_extension("fzf")
 
