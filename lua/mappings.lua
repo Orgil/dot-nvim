@@ -43,6 +43,7 @@ map('n', '<silent> p', 'p`]')
 
 map('n', 'zl', 'zL')
 map('n', 'zh', 'zH')
+map('n', 'Y', 'J')
 
 
 -- switch last buffer

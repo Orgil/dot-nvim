@@ -15,10 +15,12 @@ require('plugins.trouble')
 require('plugins.dashboard')
 require('plugins.pairs')
 require('plugins.cmp')
-require('plugins.lspsaga')
 require('plugins.indentline')
+require('plugins.lspsaga')
 require('plugins.gitsigns')
 require('plugins.hop')
 require('plugins.colorizer')
 require('plugins.whitespace')
 require('plugins.zenmode')
+
+require 'tabline'.setup {}

@@ -24,11 +24,6 @@ use {
 }
 use 'folke/tokyonight.nvim'
 use {
-  'glepnir/galaxyline.nvim',
-    branch = 'main',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
-}
-use {
   'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'
 }
 use 'sheerun/vim-polyglot'
@@ -71,4 +66,11 @@ use 'thinca/vim-visualstar'
 use 'norcalli/nvim-colorizer.lua'
 use 'ntpeters/vim-better-whitespace'
 use 'folke/zen-mode.nvim'
+use {'seblj/nvim-tabline',
+    requires = {'kyazdani42/nvim-web-devicons'}
+}
+use {
+  'shadmansaleh/lualine.nvim',
+  requires = {'kyazdani42/nvim-web-devicons', opt = true}
+}
 end)
