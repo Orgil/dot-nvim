@@ -1,7 +1,6 @@
 local opt = vim.opt
 local g = vim.g
 
-
 -- Global
 opt.mouse = 'a'
 opt.encoding = 'utf-8'
@@ -33,12 +32,15 @@ opt.undolevels = 1000
 opt.gdefault = true
 opt.list = false
 opt.foldenable = false
-opt.foldmethod = 'indent'
-opt.foldlevel = 1
+opt.foldmethod = 'expr'
+opt.foldlevel = 99
 opt.foldnestmax = 10
+opt.foldexpr = 'nvim_treesitter#foldexpr()'
 opt.shortmess:append { c = true, S = true }
 opt.listchars = { tab = "›  ", trail = "·", precedes = "←", extends = "→",eol = "↲", nbsp = "␣" }
 opt.completeopt='menu,menuone,noselect'
+opt.incsearch = true
+opt.autoindent = true
 
 opt.background = 'dark'
 opt.termguicolors = true

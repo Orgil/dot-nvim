@@ -73,4 +73,20 @@ use {
   'shadmansaleh/lualine.nvim',
   requires = {'kyazdani42/nvim-web-devicons', opt = true}
 }
+use {
+  "folke/todo-comments.nvim",
+  requires = "nvim-lua/plenary.nvim"
+}
+use({
+  "folke/persistence.nvim",
+  event = "BufReadPre", -- this will only start session saving when an actual file was opened
+  module = "persistence",
+  config = function()
+    require("persistence").setup()
+  end,
+})
+use 'onsails/lspkind-nvim'
+use 'nacro90/numb.nvim'
+use 'jose-elias-alvarez/null-ls.nvim'
+use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 end)

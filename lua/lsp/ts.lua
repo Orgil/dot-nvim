@@ -1,6 +1,7 @@
 local map = function(type, key, value)
 	vim.api.nvim_buf_set_keymap(0,type,key,value,{noremap = true, silent = true});
 end
+
 local lsp = vim.lsp
 local lspconfig = require "lspconfig"
 
@@ -8,12 +9,9 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local on_attach = function(client, server)
-  -- require'completion'.on_attach(client)
-  -- let efm server handles linting and formatting stuff
-  if server == "efm" then
-    client.resolved_capabilities.document_formatting = true
-  else
-    client.resolved_capabilities.document_formatting = false
+  client.resolved_capabilities.document_formatting = false
+  if client.config.flags then
+      client.config.flags.allow_incremental_sync = true
   end
 
   map('n','gD','<cmd>lua vim.lsp.buf.declaration()<CR>')
@@ -21,9 +19,16 @@ local on_attach = function(client, server)
 
   print("'" .. client.name .. "' server attached")
 end
--- lspconfig.tsserver.setup{on_attach = on_attach, capabilities = capabilities}
+
 lspconfig.tsserver.setup {
   on_attach = on_attach,
+  handlers = {
+    ["textDocument/publishDiagnostics"] = vim.lsp.with(
+      vim.lsp.diagnostic.on_publish_diagnostics, {
+        virtual_text = false
+      }
+    )
+  },
   flags = {debounce_text_changes = 150},
   filetypes = {
     "javascript",
@@ -33,7 +38,7 @@ lspconfig.tsserver.setup {
     "typescriptreact",
     "typescript.tsx"
   },
-  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  capabilities = capabilities,
   commands = {
     OrganizeImports = {
       function()

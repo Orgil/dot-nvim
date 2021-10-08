@@ -34,8 +34,8 @@ map('i', '<c-c>', '<Esc>')
 -- move line
 map('n', '<S-j>', '<cmd>m .+1<cr>==')
 map('n', '<S-k>', '<cmd>m .-2<cr>==')
-map('v', '<S-j>', "<cmd>m '>+1<cr>gv=gv")
-map('v', '<S-k>', "<cmd>m '<-2<cr>gv=gv")
+-- map('v', '<S-j>', "<cmd>m '>+1<cr>gv=gv")
+-- map('v', '<S-k>', "<cmd>m '<-2<cr>gv=gv")
 
 map('v', '<silent> y', 'y`]')
 map('v', '<silent> p', 'p`]')
@@ -45,6 +45,7 @@ map('n', 'zl', 'zL')
 map('n', 'zh', 'zH')
 map('n', 'Y', 'J')
 
+map('n', '<esc><esc>', '<cmd>noh<cr>')
 
 -- switch last buffer
 map('n', '<leader><leader>', '<c-^>')

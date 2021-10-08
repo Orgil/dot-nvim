@@ -5,8 +5,7 @@ require'nvim-treesitter.configs'.setup {
   },
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting = true, -- <= THIS LINE is the magic!
-    disable = {"vue"}
+    additional_vim_regex_highlighting = true
   },
   indent = {
     enable = true,

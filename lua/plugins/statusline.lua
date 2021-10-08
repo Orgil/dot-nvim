@@ -33,20 +33,20 @@ local bubbles_theme = {
 
 require('lualine').setup {
   options = {
-    theme = bubbles_theme,
+    theme = "tokyonight",
     component_separators = '|',
     section_separators = { left = '', right = '' },
   },
   sections = {
     lualine_a = {
-      { 'mode', separator = { left = '' }, right_padding = 2 },
+      { 'mode', separator = { left = '' }, padding = { right = 2} },
     },
     lualine_b = { 'filename', 'branch' },
     lualine_c = { 'fileformat' },
     lualine_x = {},
     lualine_y = { 'filetype', 'progress' },
     lualine_z = {
-      { 'location', separator = { right = '' }, left_padding = 2 },
+      { 'location', separator = { right = '' }, padding = { left = 2 }},
     },
   },
   inactive_sections = {

@@ -85,10 +85,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
   },
-  ["galaxyline.nvim"] = {
-    loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
@@ -105,9 +101,25 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim"
   },
+  ["lspkind-nvim"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
+  },
   ["lspsaga.nvim"] = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/null-ls.nvim"
+  },
+  ["numb.nvim"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/numb.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -120,6 +132,10 @@ _G.packer_plugins = {
   ["nvim-colorizer.lua"] = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
+  },
+  ["nvim-lsp-ts-utils"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-lsp-ts-utils"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -149,6 +165,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
+  ["persistence.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16persistence\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/opt/persistence.nvim"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/plenary.nvim"
@@ -160,6 +182,10 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["todo-comments.nvim"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/todo-comments.nvim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,
@@ -204,6 +230,41 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+local module_lazy_loads = {
+  ["^persistence"] = "persistence.nvim"
+}
+local lazy_load_called = {['packer.load'] = true}
+local function lazy_load_module(module_name)
+  local to_load = {}
+  if lazy_load_called[module_name] then return nil end
+  lazy_load_called[module_name] = true
+  for module_pat, plugin_name in pairs(module_lazy_loads) do
+    if not _G.packer_plugins[plugin_name].loaded and string.match(module_name, module_pat) then
+      to_load[#to_load + 1] = plugin_name
+    end
+  end
+
+  if #to_load > 0 then
+    require('packer.load')(to_load, {module = module_name}, _G.packer_plugins)
+    local loaded_mod = package.loaded[module_name]
+    if loaded_mod then
+      return function(modname) return loaded_mod end
+    end
+  end
+end
+
+if not vim.g.packer_custom_loader_enabled then
+  table.insert(package.loaders, 1, lazy_load_module)
+  vim.g.packer_custom_loader_enabled = true
+end
+
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'persistence.nvim'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 end)

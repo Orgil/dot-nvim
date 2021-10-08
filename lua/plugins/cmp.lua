@@ -1,27 +1,40 @@
 local cmp = require'cmp'
+local lspkind = require('lspkind')
 
 cmp.setup({
-    mapping = {
-      ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-      ['<C-u>'] = cmp.mapping.scroll_docs(4),
-      ['<C-Space>'] = cmp.mapping.complete(),
-      ['<C-e>'] = cmp.mapping.close(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  documentation = false,
+  mapping = {
+    ['<C-u>'] = cmp.mapping.scroll_docs(4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  },
+  sources = {
+    { name = 'nvim_lsp', max_item_count = 20 },
+    { name = 'buffer', max_item_count = 5 },
+    { name = 'path', max_item_count = 5 }
+  },
+  sorting = {
+    priority_weight = 2,
+    comparators = {
+      cmp.config.compare.exact,
+      cmp.config.compare.kind,
+      cmp.config.compare.score,
+      cmp.config.compare.offset,
+      cmp.config.compare.sort_text,
+      cmp.config.compare.length,
+      cmp.config.compare.order,
     },
-    sources = {
-      { name = 'nvim_lsp' },
-      { name = 'buffer' },
-      { name = 'path' }
-    }
-  })
-
-require("nvim-autopairs.completion.cmp").setup({
-  map_cr = true, --  map <CR> on insert mode
-  map_complete = true, -- it will auto insert `(` (map_char) after select function or method item
-  auto_select = true, -- automatically select the first item
-  insert = false, -- use insert confirm behavior instead of replace
-  map_char = { -- modifies the function or method delimiter by filetypes
-    all = '(',
-    tex = '{'
+  },
+  formatting = {
+    format = lspkind.cmp_format({
+      with_text = true,
+      menu = ({
+        buffer = "[Buf]",
+        nvim_lsp = "[LSP]",
+        vsnip = "[Snip]",
+      })
+    })
   }
 })

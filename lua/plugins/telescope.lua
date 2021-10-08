@@ -11,7 +11,8 @@ local transform_mod = require("telescope.actions.mt").transform_mod
 telescope.setup {
   defaults = {
     prompt_prefix = " ❯ ",
-    file_ignore_patterns = {".git/*", "node_modules"},
+    selection_caret = '❯ ',
+    file_ignore_patterns = {".git/*", "node_modules/.*", "%.env"},
     mappings = {
       i = {
         ["<esc>"] = actions.close,

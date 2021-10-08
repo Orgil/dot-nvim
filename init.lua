@@ -4,9 +4,9 @@ require('plugins')
 -- default settings
 require('settings')
 require('lsp')
+require('mappings')
 
 -- configs
-require('mappings')
 require('plugins.nvimtree')
 require('plugins.statusline')
 require('plugins.treesitter')
@@ -19,8 +19,10 @@ require('plugins.indentline')
 require('plugins.lspsaga')
 require('plugins.gitsigns')
 require('plugins.hop')
+require('plugins.numb')
+require('plugins.rainbow')
 require('plugins.colorizer')
 require('plugins.whitespace')
 require('plugins.zenmode')
-
-require 'tabline'.setup {}
+require('plugins.tabline')
+require('plugins.todo')
