@@ -89,4 +89,6 @@ use 'onsails/lspkind-nvim'
 use 'nacro90/numb.nvim'
 use 'jose-elias-alvarez/null-ls.nvim'
 use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+use 'hrsh7th/cmp-vsnip'
+use 'hrsh7th/vim-vsnip'
 end)

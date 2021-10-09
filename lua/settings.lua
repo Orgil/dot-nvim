@@ -46,6 +46,10 @@ opt.background = 'dark'
 opt.termguicolors = true
 
 vim.cmd[[:silent! colorscheme tokyonight]]
+vim.cmd[[hi link TroubleSignError DiagnosticSignError]]
+vim.cmd[[hi link TroubleSignWarning DiagnosticSignWarn]]
+vim.cmd[[hi link TroubleSignHint DiagnosticSignHint]]
+vim.cmd[[hi link TroubleSignInformation DiagnosticSignInfo]]
 
 -- Window
 opt.number = true
