@@ -1,13 +1,63 @@
-local utils = require('utils')
+local map = require('utils').map
 local g = vim.g
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
 g.nvim_tree_ignore = { '.git', '.cache', '.DS_Store' }
+g.nvim_tree_git_hl = 1
+g.nvim_tree_highlight_opened_files = 1
+g.nvim_tree_add_trailing = 1
+g.nvim_tree_group_empty = 1
+g.nvim_tree_root_folder_modifier = ":t:r"
+g.nvim_tree_window_picker_exclude = {
+  filetype = { 'Trouble' },
+  buftype = { 'terminal' }
+}
+g.nvim_tree_show_icons = {
+  git = 1,
+  folders = 1,
+  files = 1,
+  folder_arrows = 0,
+}
+g.nvim_tree_icons = {
+  default = '',
+  symlink = '',
+  git = {
+    unstaged= "✗",
+    staged= "✓",
+    unmerged= "",
+    renamed= "➜",
+    untracked= "★",
+    deleted= "",
+    ignored= "◌"
+  },
+  folder = {
+    arrow_open= "",
+    arrow_closed= "",
+    default= "",
+    open= "",
+    empty= "",
+    empty_open= "",
+    symlink= "",
+    symlink_open= "",
+  }
+}
 
 require'nvim-tree'.setup ({
-	disable_netrw = true,
+  disable_netrw = true,
+  hijack_cursor = true,
+  update_focused_file = {
+    -- enables the feature
+    enable      = false,
+    -- update the root directory of the tree to the one of the folder containing the file if the file is not under the current root directory
+    -- only relevant when `update_focused_file.enable` is true
+    update_cwd  = false,
+    -- list of buffer names / filetypes that will not update the cwd if the file isn't found under the current root directory
+    -- only relevant when `update_focused_file.update_cwd` is true and `update_focused_file.enable` is true
+    ignore_list = {}
+  },
   view = {
     mappings = {
+      custom_only = true,
       list = {
         { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
         { key = {"<2-RightMouse>", "<C-]>"},    cb = tree_cb("cd") },
@@ -46,4 +96,5 @@ require'nvim-tree'.setup ({
   }
 })
 
-utils.map("n", "<f4>", ":NvimTreeToggle<cr>")
+map("n", "<f4>", ":NvimTreeToggle<cr>")
+map("n", "<leader>nt", ":NvimTreeFindFile<cr>")

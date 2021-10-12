@@ -81,6 +81,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/cmp-path"
   },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
+  },
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
@@ -112,6 +116,10 @@ _G.packer_plugins = {
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+  },
+  ["nightfox.nvim"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nightfox.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -218,6 +226,10 @@ _G.packer_plugins = {
   ["vim-visualstar"] = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-visualstar"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   },
   ["vim-wordmotion"] = {
     loaded = true,

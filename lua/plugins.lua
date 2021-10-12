@@ -18,77 +18,78 @@ return require('packer').startup(function(use)
   -- Packer can manage itself as an optional plugin
   use 'wbthomason/packer.nvim'
 
-use {
+  use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons'
-}
-use 'folke/tokyonight.nvim'
-use {
-  'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'
-}
-use 'sheerun/vim-polyglot'
-use {
-  'nvim-telescope/telescope.nvim',
-  requires = { {'nvim-lua/plenary.nvim'} }
-}
-use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
-use {
-  "folke/trouble.nvim",
-  requires = "kyazdani42/nvim-web-devicons"
-}
-use 'dietrichm/lsp-colors.nvim'
-use 'glepnir/dashboard-nvim'
-use 'windwp/nvim-autopairs'
-use 'windwp/nvim-ts-autotag'
-use 'neovim/nvim-lspconfig'
-use 'tami5/lspsaga.nvim'
-use 'hrsh7th/cmp-nvim-lsp'
-use 'hrsh7th/cmp-buffer'
-use 'hrsh7th/cmp-path'
-use 'hrsh7th/nvim-cmp'
-use 'lukas-reineke/indent-blankline.nvim'
-use {
-  'lewis6991/gitsigns.nvim',
-  requires = {
-    'nvim-lua/plenary.nvim'
-  },
-  -- tag = 'release' -- To use the latest release
-}
-use {
-  'phaazon/hop.nvim',
-  as = 'hop'
-}
-use 'chaoren/vim-wordmotion'
-use 'tpope/vim-surround'
-use 'tpope/vim-commentary'
-use 'tpope/vim-repeat'
-use 'thinca/vim-visualstar'
-use 'norcalli/nvim-colorizer.lua'
-use 'ntpeters/vim-better-whitespace'
-use 'folke/zen-mode.nvim'
-use {'seblj/nvim-tabline',
+  }
+  use 'abzcoding/tokyonight.nvim'
+  use 'EdenEast/nightfox.nvim'
+  use {
+    'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'
+  }
+  use 'sheerun/vim-polyglot'
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
+  use {
+    "The-personified-devil/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons"
+  }
+  use 'dietrichm/lsp-colors.nvim'
+  use 'glepnir/dashboard-nvim'
+  use 'windwp/nvim-autopairs'
+  use 'windwp/nvim-ts-autotag'
+  use 'neovim/nvim-lspconfig'
+  use 'tami5/lspsaga.nvim'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/nvim-cmp'
+  use 'lukas-reineke/indent-blankline.nvim'
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    -- tag = 'release' -- To use the latest release
+  }
+  use {
+    'phaazon/hop.nvim',
+    as = 'hop'
+  }
+  use 'chaoren/vim-wordmotion'
+  use 'tpope/vim-surround'
+  use 'tpope/vim-commentary'
+  use 'tpope/vim-repeat'
+  use 'thinca/vim-visualstar'
+  use 'norcalli/nvim-colorizer.lua'
+  use 'ntpeters/vim-better-whitespace'
+  use 'folke/zen-mode.nvim'
+  use {'seblj/nvim-tabline',
     requires = {'kyazdani42/nvim-web-devicons'}
-}
-use {
-  'shadmansaleh/lualine.nvim',
-  requires = {'kyazdani42/nvim-web-devicons', opt = true}
-}
-use {
-  "folke/todo-comments.nvim",
-  requires = "nvim-lua/plenary.nvim"
-}
-use({
-  "folke/persistence.nvim",
-  event = "BufReadPre", -- this will only start session saving when an actual file was opened
-  module = "persistence",
-  config = function()
-    require("persistence").setup()
-  end,
-})
-use 'onsails/lspkind-nvim'
-use 'nacro90/numb.nvim'
-use 'jose-elias-alvarez/null-ls.nvim'
-use 'jose-elias-alvarez/nvim-lsp-ts-utils'
-use 'hrsh7th/cmp-vsnip'
-use 'hrsh7th/vim-vsnip'
+  }
+  use {
+    'shadmansaleh/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim"
+  }
+  use({
+    "folke/persistence.nvim",
+    event = "BufReadPre", -- this will only start session saving when an actual file was opened
+    module = "persistence",
+    config = function()
+      require("persistence").setup()
+    end,
+  })
+  use 'onsails/lspkind-nvim'
+  use 'nacro90/numb.nvim'
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
 end)

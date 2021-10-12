@@ -44,6 +44,7 @@ opt.autoindent = true
 
 opt.background = 'dark'
 opt.termguicolors = true
+vim.g.tokyonight_sidebars = { "NvimTree" }
 
 vim.cmd[[:silent! colorscheme tokyonight]]
 vim.cmd[[hi link TroubleSignError DiagnosticSignError]]

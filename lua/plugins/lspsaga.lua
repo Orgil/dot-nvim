@@ -9,7 +9,8 @@ for type, icon in pairs(signs) do
 end
 
 saga.init_lsp_saga {
-   error_sign = '', -- 
+   border_style = 'round',
+   error_sign = '',
    warn_sign = '',
    hint_sign = '',
    infor_sign = '',

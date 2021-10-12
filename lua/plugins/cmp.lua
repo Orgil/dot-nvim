@@ -8,12 +8,15 @@ cmp.setup({
       vim.fn["vsnip#anonymous"](args.body)
     end
   },
+  completion = {
+    completeopt = 'menu,menuone,noinsert'
+  },
   mapping = {
     ['<C-u>'] = cmp.mapping.scroll_docs(4),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-c>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<Tab>'] = cmp.mapping.confirm({ select = true }),
   },
   sources = {
     { name = 'vsnip', max_item_count = 5 },
@@ -23,7 +26,7 @@ cmp.setup({
   },
   formatting = {
     format = lspkind.cmp_format({
-      with_text = true,
+      with_text = false,
       menu = ({
         buffer = "[Buf]",
         nvim_lsp = "[LSP]",
