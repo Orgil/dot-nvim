@@ -2,7 +2,7 @@ local map = require('utils').map
 local g = vim.g
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
-g.nvim_tree_ignore = { '.git', '.cache', '.DS_Store' }
+g.nvim_tree_ignore = { '.git', '.cache', '.DS_Store', '.devspace', '.history' }
 g.nvim_tree_git_hl = 1
 g.nvim_tree_highlight_opened_files = 1
 g.nvim_tree_add_trailing = 1
