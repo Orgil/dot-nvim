@@ -32,8 +32,8 @@ saga.init_lsp_saga {
    },
 }
 
-map('n', '<leader>a', ':Lspsaga code_action<CR>')
-map('v', '<leader>a', ':<C-U>Lspsaga range_code_action<CR>')
+-- map('n', '<leader>a', ':Lspsaga code_action<CR>')
+-- map('v', '<leader>a', ':<C-U>Lspsaga range_code_action<CR>')
 map('n', ';', ':Lspsaga show_line_diagnostics<CR>')
 map('n', '<leader>u', ':Lspsaga lsp_finder<CR>')
 map('n', '<leader>r', ':Lspsaga rename<CR>')

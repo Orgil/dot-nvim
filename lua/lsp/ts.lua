@@ -3,6 +3,7 @@ local buffer_map = require "utils".buffer_map
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local ts_utils_settings = {
   debug = false,
@@ -34,8 +35,6 @@ local on_attach = function(client, bufnr)
   ts_utils.setup(ts_utils_settings)
   ts_utils.setup_client(client)
 
-  buffer_map(bufnr, 'n','gD','<cmd>lua vim.lsp.buf.declaration()<CR>')
-  buffer_map(bufnr, 'n','<leader>d','<cmd>lua vim.lsp.buf.definition()<CR>')
   buffer_map(bufnr, 'n','<leader>fr',':TSLspRenameFile<CR>')
 end
 

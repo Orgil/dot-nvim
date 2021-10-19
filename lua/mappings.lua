@@ -45,7 +45,7 @@ map('n', 'zl', 'zL')
 map('n', 'zh', 'zH')
 map('n', 'Y', 'J')
 
-map('n', '<esc><esc>', '<cmd>noh<cr>')
+map('n', '<cr>', '<cmd>noh<cr>')
 
 -- switch last buffer
 map('n', '<leader><leader>', '<c-^>')
