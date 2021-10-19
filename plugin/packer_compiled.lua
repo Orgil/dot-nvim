@@ -177,6 +177,7 @@ _G.packer_plugins = {
     config = { "\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16persistence\frequire\0" },
     loaded = false,
     needs_bufread = false,
+    only_cond = false,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/opt/persistence.nvim"
   },
   ["plenary.nvim"] = {
@@ -210,6 +211,10 @@ _G.packer_plugins = {
   ["vim-commentary"] = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-commentary"
+  },
+  ["vim-lastplace"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-lastplace"
   },
   ["vim-polyglot"] = {
     loaded = true,

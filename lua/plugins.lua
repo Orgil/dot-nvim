@@ -92,4 +92,5 @@ return require('packer').startup(function(use)
   use 'jose-elias-alvarez/nvim-lsp-ts-utils'
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
+  use 'farmergreg/vim-lastplace'
 end)
