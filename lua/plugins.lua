@@ -93,4 +93,5 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
   use 'farmergreg/vim-lastplace'
+  use 'simrat39/rust-tools.nvim'
 end)

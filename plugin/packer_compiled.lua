@@ -71,178 +71,226 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-path"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/cmp-path"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
   },
   ["cmp-vsnip"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
   },
   ["dashboard-nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
+    url = "https://github.com/glepnir/dashboard-nvim"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   hop = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/hop"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/hop",
+    url = "https://github.com/phaazon/hop.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lsp-colors.nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim",
+    url = "https://github.com/dietrichm/lsp-colors.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
+    url = "https://github.com/onsails/lspkind-nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/tami5/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["nightfox.nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nightfox.nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/null-ls.nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["numb.nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/numb.nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/numb.nvim",
+    url = "https://github.com/nacro90/numb.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-lsp-ts-utils"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-lsp-ts-utils"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-lsp-ts-utils",
+    url = "https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tabline"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-tabline"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-tabline",
+    url = "https://github.com/seblj/nvim-tabline"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-ts-autotag"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   ["persistence.nvim"] = {
     config = { "\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16persistence\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/opt/persistence.nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/opt/persistence.nvim",
+    url = "https://github.com/folke/persistence.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["todo-comments.nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/todo-comments.nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/tokyonight.nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/abzcoding/tokyonight.nvim"
   },
   ["trouble.nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/trouble.nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/The-personified-devil/trouble.nvim"
   },
   ["vim-better-whitespace"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-better-whitespace"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-better-whitespace",
+    url = "https://github.com/ntpeters/vim-better-whitespace"
   },
   ["vim-commentary"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-commentary"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-lastplace"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-lastplace"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-lastplace",
+    url = "https://github.com/farmergreg/vim-lastplace"
   },
   ["vim-polyglot"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-polyglot"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-polyglot",
+    url = "https://github.com/sheerun/vim-polyglot"
   },
   ["vim-repeat"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-repeat"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-surround"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-surround"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   ["vim-visualstar"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-visualstar"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-visualstar",
+    url = "https://github.com/thinca/vim-visualstar"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   },
   ["vim-wordmotion"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-wordmotion"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/vim-wordmotion",
+    url = "https://github.com/chaoren/vim-wordmotion"
   },
   ["zen-mode.nvim"] = {
     loaded = true,
-    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/zen-mode.nvim"
+    path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 
