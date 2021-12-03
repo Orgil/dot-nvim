@@ -40,7 +40,6 @@ local sources = {
   gdscript_formatter,
   b.formatting.prettierd,
   b.code_actions.gitsigns,
-  b.diagnostics.dockerfile,
   b.diagnostics.stylelint
 }
 
