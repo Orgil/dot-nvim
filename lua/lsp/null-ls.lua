@@ -38,12 +38,11 @@ local gdscript_linter = {
 local sources = {
   gdscript_linter,
   gdscript_formatter,
-  b.formatting.prettierd,
+  b.diagnostics.eslint_d,
+  b.formatting.prettier,
   b.code_actions.gitsigns,
   b.diagnostics.stylelint
 }
-
-null_ls.config({ sources = sources });
 
 local on_attach = function(client, bufnr)
   buffer_map(bufnr, 'n','<leader>ff','<cmd>lua vim.lsp.buf.formatting()<CR>')
@@ -51,13 +50,7 @@ local on_attach = function(client, bufnr)
   vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
 end
 
-lspconfig['null-ls'].setup({
-  on_attach = on_attach,
-  handlers = {
-    ["textDocument/publishDiagnostics"] = vim.lsp.with(
-      vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = false
-      }
-    )
-  }
-})
+null_ls.setup({
+  sources = sources,
+  on_attach = on_attach
+});
