@@ -240,7 +240,7 @@ _G.packer_plugins = {
   ["trouble.nvim"] = {
     loaded = true,
     path = "/Users/orgil/.local/share/nvim/site/pack/packer/start/trouble.nvim",
-    url = "https://github.com/The-personified-devil/trouble.nvim"
+    url = "https://github.com/folke/trouble.nvim"
   },
   ["vim-better-whitespace"] = {
     loaded = true,

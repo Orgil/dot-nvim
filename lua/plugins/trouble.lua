@@ -7,4 +7,4 @@ require "trouble".setup {
 }
 
 map('n', '<F2>', '<cmd>TodoTrouble<CR>')
-map('n', '<F3>', '<cmd>TroubleToggle lsp_document_diagnostics<CR>')
+map('n', '<F3>', '<cmd>TroubleToggle document_diagnostics<CR>')

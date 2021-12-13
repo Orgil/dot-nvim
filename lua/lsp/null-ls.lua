@@ -1,4 +1,3 @@
-local lspconfig = require 'lspconfig'
 local null_ls = require 'null-ls'
 local helpers = require 'null-ls.helpers'
 local b = null_ls.builtins
@@ -38,10 +37,16 @@ local gdscript_linter = {
 local sources = {
   gdscript_linter,
   gdscript_formatter,
-  b.diagnostics.eslint_d,
+  require("null-ls.helpers").conditional(function(utils)
+    return utils.root_has_file(".eslintrc") and b.diagnostics.eslint_d.with({
+      diagnostics_format = "#{m} [#{c}]"
+    })
+  end),
   b.formatting.prettier,
   b.code_actions.gitsigns,
-  b.diagnostics.stylelint
+  require("null-ls.helpers").conditional(function(utils)
+    return utils.root_has_file(".eslintrc") and b.code_actions.eslint_d
+  end),
 }
 
 local on_attach = function(client, bufnr)
@@ -51,6 +56,7 @@ local on_attach = function(client, bufnr)
 end
 
 null_ls.setup({
+  debug = true,
   sources = sources,
   on_attach = on_attach
 });

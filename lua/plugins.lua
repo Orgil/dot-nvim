@@ -34,7 +34,7 @@ return require('packer').startup(function(use)
   }
   use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
   use {
-    "The-personified-devil/trouble.nvim",
+    "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons"
   }
   use 'dietrichm/lsp-colors.nvim'
@@ -88,7 +88,11 @@ return require('packer').startup(function(use)
   })
   use 'onsails/lspkind-nvim'
   use 'nacro90/numb.nvim'
-  use 'jose-elias-alvarez/null-ls.nvim'
+  use {'jose-elias-alvarez/null-ls.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+  }
   use 'jose-elias-alvarez/nvim-lsp-ts-utils'
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
