@@ -37,16 +37,18 @@ local gdscript_linter = {
 local sources = {
   gdscript_linter,
   gdscript_formatter,
-  require("null-ls.helpers").conditional(function(utils)
-    return utils.root_has_file(".eslintrc") and b.diagnostics.eslint_d.with({
-      diagnostics_format = "#{m} [#{c}]"
-    })
-  end),
+  b.diagnostics.eslint_d.with({ 
+    condition = function(utils)
+      return utils.root_has_file(".eslintrc")
+    end
+  }),
   b.formatting.prettier,
   b.code_actions.gitsigns,
-  require("null-ls.helpers").conditional(function(utils)
-    return utils.root_has_file(".eslintrc") and b.code_actions.eslint_d
-  end),
+  b.code_actions.eslint_d.with({ 
+    condition = function(utils)
+      return utils.root_has_file(".eslintrc")
+    end
+  })
 }
 
 local on_attach = function(client, bufnr)
