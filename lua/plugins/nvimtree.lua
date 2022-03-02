@@ -7,10 +7,6 @@ g.nvim_tree_highlight_opened_files = 1
 g.nvim_tree_add_trailing = 1
 g.nvim_tree_group_empty = 1
 g.nvim_tree_root_folder_modifier = ":t:r"
-g.nvim_tree_window_picker_exclude = {
-  filetype = { 'Trouble' },
-  buftype = { 'terminal' }
-}
 g.nvim_tree_show_icons = {
   git = 1,
   folders = 1,
@@ -44,6 +40,16 @@ g.nvim_tree_icons = {
 require'nvim-tree'.setup ({
   disable_netrw = true,
   hijack_cursor = true,
+  actions = {
+    open_file = {
+      window_picker = {
+        exclude = {
+          filetype = { 'Trouble' },
+          buftype = { 'terminal' }
+        }
+      }
+    }
+  },
   update_focused_file = {
     -- enables the feature
     enable      = false,
