@@ -31,9 +31,6 @@ lspconfig.tsserver.setup {
         virtual_text = false
       }
     ),
-  ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-      border = "rounded"
-    })
   },
   filetypes = {
     "javascript",

@@ -68,4 +68,3 @@ map('v', '<leader>a', ':Telescope lsp_range_code_actions theme=cursor<CR>')
 map('n', '<c-m>', ':Telescope projects theme=dropdown<CR>')
 
 telescope.load_extension('fzf')
-telescope.load_extension('projects')
