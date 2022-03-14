@@ -2,6 +2,8 @@ local map = require('utils').map
 local g = vim.g
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
+g.nvim_tree_respect_buf_cwd = 1
+
 g.nvim_tree_git_hl = 1
 g.nvim_tree_highlight_opened_files = 1
 g.nvim_tree_add_trailing = 1
@@ -37,6 +39,8 @@ g.nvim_tree_icons = {
   }
 }
 
+require("nvim-tree").setup({
+})
 require'nvim-tree'.setup ({
   disable_netrw = true,
   hijack_cursor = true,
@@ -73,8 +77,6 @@ require'nvim-tree'.setup ({
         { key = "s",                        cb = tree_cb("vsplit") },
         { key = "i",                        cb = tree_cb("split") },
         { key = "<C-t>",                        cb = tree_cb("tabnew") },
-        { key = "<",                            cb = tree_cb("prev_sibling") },
-        { key = ">",                            cb = tree_cb("next_sibling") },
         { key = "h",                            cb = tree_cb("parent_node") },
         { key = "<BS>",                         cb = tree_cb("close_node") },
         { key = "<S-CR>",                       cb = tree_cb("close_node") },
@@ -82,7 +84,7 @@ require'nvim-tree'.setup ({
         { key = "K",                            cb = tree_cb("first_sibling") },
         { key = "J",                            cb = tree_cb("last_sibling") },
         { key = "I",                            cb = tree_cb("toggle_ignored") },
-        { key = "H",                            cb = tree_cb("toggle_dotfiles") },
+        { key = ">",                            cb = tree_cb("toggle_dotfiles") },
         { key = "R",                            cb = tree_cb("refresh") },
         { key = "ma",                            cb = tree_cb("create") },
         { key = "md",                            cb = tree_cb("remove") },
