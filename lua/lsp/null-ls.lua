@@ -37,33 +37,19 @@ local gdscript_linter = {
 local sources = {
   gdscript_linter,
   gdscript_formatter,
-  b.diagnostics.eslint_d.with({
-      prefer_local = 'node_modules/.bin',
+  b.diagnostics.eslint.with({
       condition = function(utils)
         return utils.root_has_file(".eslintrc")
       end
     }),
-  b.formatting.prettierd.with({
-      env = {
-        PRETTIERD_LOCAL_PRETTIER_ONLY = 1,
-      },
-      condition = function(utils)
-        return utils.root_has_file(".prettierrc")
-      end
-    }),
-  b.formatting.eslint_d.with({
-      prefer_local = 'node_modules/.bin',
+  b.diagnostics.jsonlint,
+  b.formatting.prettier,
+  b.code_actions.eslint.with({
       condition = function(utils)
         return utils.root_has_file(".eslintrc")
       end
     }),
-  b.code_actions.gitsigns,
-  b.code_actions.eslint_d.with({
-      prefer_local = 'node_modules/.bin',
-      condition = function(utils)
-        return utils.root_has_file(".eslintrc")
-      end
-    })
+  b.code_actions.gitsigns
 }
 
 local on_attach = function(client, bufnr)
