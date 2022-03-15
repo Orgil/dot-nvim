@@ -1,7 +1,8 @@
-require('impatient')
 
 -- plugins list
 require('plugins')
+
+require('impatient')
 
 -- default settings
 require('settings')
