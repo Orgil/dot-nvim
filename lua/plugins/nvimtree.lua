@@ -39,11 +39,14 @@ g.nvim_tree_icons = {
   }
 }
 
-require("nvim-tree").setup({
-})
 require'nvim-tree'.setup ({
   disable_netrw = true,
   hijack_cursor = true,
+  ignore_ft_on_setup = {
+    'startify',
+    'dashboard',
+    'alpha',
+  },
   actions = {
     open_file = {
       window_picker = {

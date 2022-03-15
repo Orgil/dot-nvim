@@ -15,6 +15,9 @@ vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile' -- Auto compile when th
 require('packer').init({display = {auto_clean = true, open_fn=require'packer.util'.float}})
 
 return require('packer').startup(function(use)
+  use 'nathom/filetype.nvim'
+  use 'lewis6991/impatient.nvim'
+  use 'rcarriga/nvim-notify'
   -- Packer can manage itself as an optional plugin
   use 'wbthomason/packer.nvim'
 
@@ -42,12 +45,15 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
   use 'neovim/nvim-lspconfig'
-  use 'tami5/lspsaga.nvim'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/nvim-cmp'
   use 'lukas-reineke/indent-blankline.nvim'
+  use({
+    'CosmicNvim/cosmic-ui',
+    requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' }
+  })
   use {
     'lewis6991/gitsigns.nvim',
     requires = {

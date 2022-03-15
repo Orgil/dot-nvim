@@ -1,7 +1,7 @@
 local null_ls = require 'null-ls'
 local helpers = require 'null-ls.helpers'
 local b = null_ls.builtins
-local buffer_map = require 'utils'.buffer_map
+local buf_map = require 'utils'.buffer_map
 
 local gdscript_formatter = {
   method = null_ls.methods.FORMATTING,
@@ -37,28 +37,58 @@ local gdscript_linter = {
 local sources = {
   gdscript_linter,
   gdscript_formatter,
-  b.diagnostics.eslint_d.with({ 
-    condition = function(utils)
-      return utils.root_has_file(".eslintrc")
-    end
-  }),
-  b.formatting.prettier,
+  b.diagnostics.eslint_d.with({
+      prefer_local = 'node_modules/.bin',
+      condition = function(utils)
+        return utils.root_has_file(".eslintrc")
+      end
+    }),
+  b.formatting.prettierd.with({
+      env = {
+        PRETTIERD_LOCAL_PRETTIER_ONLY = 1,
+      },
+      condition = function(utils)
+        return utils.root_has_file(".prettierrc")
+      end
+    }),
+  b.formatting.eslint_d.with({
+      prefer_local = 'node_modules/.bin',
+      condition = function(utils)
+        return utils.root_has_file(".eslintrc")
+      end
+    }),
   b.code_actions.gitsigns,
-  b.code_actions.eslint_d.with({ 
-    condition = function(utils)
-      return utils.root_has_file(".eslintrc")
-    end
-  })
+  b.code_actions.eslint_d.with({
+      prefer_local = 'node_modules/.bin',
+      condition = function(utils)
+        return utils.root_has_file(".eslintrc")
+      end
+    })
 }
 
 local on_attach = function(client, bufnr)
-  buffer_map(bufnr, 'n','<leader>ff','<cmd>lua vim.lsp.buf.formatting()<CR>')
+  buf_map(bufnr, 'n','<leader>ff','<cmd>lua vim.lsp.buf.formatting()<CR>')
+  buf_map(bufnr, 'v', '<leader>ff', '<cmd>lua vim.lsp.buf.range_formatting()<cr>')
+  buf_map(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>')
+  buf_map(bufnr, 'n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>')
+
+  buf_map(bufnr, 'n', '<leader>a', '<cmd>lua require("cosmic-ui").code_actions()<cr>')
+  buf_map(bufnr, 'v', '<leader>a', '<cmd>lua require("cosmic-ui").range_code_actions()<cr>')
+  buf_map(bufnr, 'n', '<leader>r', '<cmd>lua require("cosmic-ui").rename()<cr>')
+
   -- format on save
-  vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+  if client.resolved_capabilities.document_formatting then
+    vim.cmd([[
+      augroup LspFormatting
+          autocmd! * <buffer>
+          autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+      augroup END
+      ]])
+  end
 end
 
 null_ls.setup({
-  debug = true,
-  sources = sources,
-  on_attach = on_attach
-});
+    debug = true,
+    sources = sources,
+    on_attach = on_attach
+  });

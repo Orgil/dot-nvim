@@ -14,11 +14,14 @@ local on_attach = function(client, bufnr)
     debug = false,
     enable_import_on_completion = true,
     update_imports_on_move = true,
-    filter_out_diagnostics_by_code = { 80001 }
+    filter_out_diagnostics_by_code = { 80001 },
+    auto_inlay_hints = true,
+    inlay_hints_highlight = 'Comment'
   })
   ts_utils.setup_client(client)
 
   buffer_map(bufnr, 'n','<leader>fr',':TSLspRenameFile<CR>')
+  buffer_map(bufnr, 'n', ';', '<cmd>lua vim.diagnostic.open_float(nil, { scope = "line", })<cr>')
 end
 
 lspconfig.tsserver.setup {
