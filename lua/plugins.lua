@@ -68,6 +68,7 @@ return require('packer').startup(function(use)
   use 'chaoren/vim-wordmotion'
   use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'tpope/vim-repeat'
   use 'thinca/vim-visualstar'
   use 'norcalli/nvim-colorizer.lua'

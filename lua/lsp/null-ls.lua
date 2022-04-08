@@ -48,7 +48,9 @@ local sources = {
   --       return utils.root_has_file(".eslintrc")
   --     end
   --   }),
-  -- b.code_actions.gitsigns
+  b.code_actions.refactoring,
+  b.diagnostics.stylelint,
+  b.diagnostics.yamllint
 }
 
 local on_attach = function(client, bufnr)
