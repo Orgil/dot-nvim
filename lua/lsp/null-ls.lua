@@ -37,19 +37,18 @@ local gdscript_linter = {
 local sources = {
   gdscript_linter,
   gdscript_formatter,
-  b.diagnostics.eslint.with({
-      condition = function(utils)
-        return utils.root_has_file(".eslintrc")
-      end
-    }),
-  b.diagnostics.jsonlint,
-  b.formatting.prettier,
-  b.code_actions.eslint.with({
-      condition = function(utils)
-        return utils.root_has_file(".eslintrc")
-      end
-    }),
-  b.code_actions.gitsigns
+  -- b.diagnostics.eslint.with({
+  --     condition = function(utils)
+  --       return utils.root_has_file(".eslintrc")
+  --     end
+  --   }),
+  -- b.formatting.prettier,
+  -- b.code_actions.eslint.with({
+  --     condition = function(utils)
+  --       return utils.root_has_file(".eslintrc")
+  --     end
+  --   }),
+  -- b.code_actions.gitsigns
 }
 
 local on_attach = function(client, bufnr)
@@ -66,8 +65,7 @@ local on_attach = function(client, bufnr)
   if client.resolved_capabilities.document_formatting then
     vim.cmd([[
       augroup LspFormatting
-          autocmd! * <buffer>
-          autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+        autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
       augroup END
       ]])
   end

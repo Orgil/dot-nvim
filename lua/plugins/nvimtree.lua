@@ -86,7 +86,7 @@ require'nvim-tree'.setup ({
         { key = "<Tab>",                        cb = tree_cb("preview") },
         { key = "K",                            cb = tree_cb("first_sibling") },
         { key = "J",                            cb = tree_cb("last_sibling") },
-        { key = "I",                            cb = tree_cb("toggle_ignored") },
+        { key = "I",                            cb = tree_cb("toggle_git_ignored") },
         { key = ">",                            cb = tree_cb("toggle_dotfiles") },
         { key = "R",                            cb = tree_cb("refresh") },
         { key = "ma",                            cb = tree_cb("create") },

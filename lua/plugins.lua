@@ -17,7 +17,7 @@ require('packer').init({display = {auto_clean = true, open_fn=require'packer.uti
 return require('packer').startup(function(use)
   use 'nathom/filetype.nvim'
   use 'lewis6991/impatient.nvim'
-  use 'rcarriga/nvim-notify'
+  -- use 'rcarriga/nvim-notify'
   -- Packer can manage itself as an optional plugin
   use 'wbthomason/packer.nvim'
 

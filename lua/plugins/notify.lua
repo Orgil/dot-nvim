@@ -1,5 +1,5 @@
-require('notify').setup({
-  stages = 'slide'
-})
+-- require('notify').setup({
+--   stages = 'slide'
+-- })
 
-vim.notify = require('notify')
+-- vim.notify = require('notify')
