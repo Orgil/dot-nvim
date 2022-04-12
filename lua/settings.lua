@@ -69,6 +69,9 @@ vim.cmd[[highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4]]
 vim.cmd[[highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4]]
 vim.cmd[[highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4]]
 
+vim.cmd([[
+  autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
+]])
 -- Window
 opt.number = true
 opt.cursorline = true

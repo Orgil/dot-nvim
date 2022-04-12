@@ -64,13 +64,13 @@ local on_attach = function(client, bufnr)
   buf_map(bufnr, 'n', '<leader>r', '<cmd>lua require("cosmic-ui").rename()<cr>')
 
   -- format on save
-  if client.resolved_capabilities.document_formatting then
-    vim.cmd([[
-      augroup LspFormatting
-        autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
-      augroup END
-      ]])
-  end
+  -- if client.resolved_capabilities.document_formatting then
+  --   vim.cmd([[
+  --     augroup LspFormatting
+  --       autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
+  --     augroup END
+  --     ]])
+  -- end
 end
 
 null_ls.setup({
