@@ -54,7 +54,7 @@ local sources = {
 }
 
 local on_attach = function(client, bufnr)
-  buf_map(bufnr, 'n','<leader>ff','<cmd>lua vim.lsp.buf.formatting()<CR>')
+  buf_map(bufnr, 'n', '<leader>ff', '<cmd>lua vim.lsp.buf.formatting()<CR>')
   buf_map(bufnr, 'v', '<leader>ff', '<cmd>lua vim.lsp.buf.range_formatting()<cr>')
   buf_map(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>')
   buf_map(bufnr, 'n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>')
@@ -65,11 +65,7 @@ local on_attach = function(client, bufnr)
 
   -- format on save
   -- if client.resolved_capabilities.document_formatting then
-  --   vim.cmd([[
-  --     augroup LspFormatting
-  --       autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
-  --     augroup END
-  --     ]])
+    -- vim.cmd([[ autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll ]])
   -- end
 end
 
