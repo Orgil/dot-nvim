@@ -63,7 +63,7 @@ map('n', '<c-b>', "<cmd>lua require'telescope.builtin'.buffers(require('telescop
 map('n', '<c-f>', '<cmd>Telescope live_grep<cr>')
 map('n', '<leader>d', ':Telescope lsp_definitions theme=dropdown<CR>')
 map('n', '<leader>t', ':Telescope lsp_type_definitions theme=dropdown<CR>')
-map('n', '<leader>a', ':Telescope lsp_code_actions theme=cursor<CR>')
-map('v', '<leader>a', ':Telescope lsp_range_code_actions theme=cursor<CR>')
+-- map('n', '<leader>a', ':Telescope lsp_code_actions theme=cursor<CR>')
+-- map('v', '<leader>a', ':Telescope lsp_range_code_actions theme=cursor<CR>')
 
 telescope.load_extension('fzf')

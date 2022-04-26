@@ -1,5 +1,5 @@
 local lspconfig = require "lspconfig"
-local buffer_map = require "utils".buffer_map
+local buf_map = require "utils".buffer_map
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -20,8 +20,17 @@ local on_attach = function(client, bufnr)
   })
   ts_utils.setup_client(client)
 
-  buffer_map(bufnr, 'n','<leader>fr',':TSLspRenameFile<CR>')
-  buffer_map(bufnr, 'n', ';', '<cmd>lua vim.diagnostic.open_float(nil, { scope = "line", })<cr>')
+  buf_map(bufnr, 'n','<leader>fr',':TSLspRenameFile<CR>')
+  buf_map(bufnr, 'n', ';', '<cmd>lua vim.diagnostic.open_float(nil, { scope = "line", })<cr>')
+
+  buf_map(bufnr, 'n', '<leader>ff', '<cmd>EslintFixAll<CR>')
+  buf_map(bufnr, 'v', '<leader>ff', '<cmd>lua vim.lsp.buf.range_formatting()<cr>')
+  buf_map(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>')
+  buf_map(bufnr, 'n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>')
+
+  buf_map(bufnr, 'n', '<leader>a', '<cmd>lua require("cosmic-ui").code_actions()<cr>')
+  buf_map(bufnr, 'v', '<leader>a', '<cmd>lua require("cosmic-ui").range_code_actions()<cr>')
+  buf_map(bufnr, 'n', '<leader>r', '<cmd>lua require("cosmic-ui").rename()<cr>')
 end
 
 lspconfig.tsserver.setup {
