@@ -69,7 +69,8 @@ require'nvim-tree'.setup ({
   },
   filters = {
     dotfiles = false,
-    custom = {  '.git', '.cache', '.DS_Store', '.devspace', '.history' }
+    custom = {  '.git', '.cache', '.DS_Store', '.devspace', '.history' },
+    exclude = { '.github'}
   },
   view = {
     mappings = {
