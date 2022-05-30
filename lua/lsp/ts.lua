@@ -6,8 +6,8 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local on_attach = function(client, bufnr)
-  client.resolved_capabilities.document_formatting = false
-  client.resolved_capabilities.document_range_formatting = false
+  client.server_capabilities.document_formatting = false
+  client.server_capabilities.document_range_formatting = false
 
   local ts_utils = require("nvim-lsp-ts-utils")
   ts_utils.setup({

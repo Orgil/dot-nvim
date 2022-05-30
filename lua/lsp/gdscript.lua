@@ -1,8 +1,8 @@
 local lspconfig = require "lspconfig"
 
 local on_attach = function(client, bufnr)
-  client.resolved_capabilities.document_formatting = false
-  client.resolved_capabilities.document_range_formatting = false
+  client.server_capabilities.document_formatting = false
+  client.server_capabilities.document_range_formatting = false
 end
 
  --remote-send "<C-\><C-N>:n {file}<CR>{line}G{col}|"
