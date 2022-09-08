@@ -49,8 +49,8 @@ local sources = {
   --     end
   --   }),
   b.code_actions.refactoring,
-  b.diagnostics.stylelint,
-  b.diagnostics.yamllint
+  b.diagnostics.stylelint
+  -- b.diagnostics.yamllint
 }
 
 local on_attach = function(client, bufnr)

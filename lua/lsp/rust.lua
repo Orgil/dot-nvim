@@ -1,13 +1,17 @@
 local lspconfig = require'lspconfig'
+local buf_map = require "utils".buffer_map
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
+local on_attach = function(client, bufnr)
+  buf_map(bufnr, 'n', ';', '<cmd>:RustHoverActions<cr>')
+end
+
 local opts = {
     tools = {
         autoSetHints = true,
-        hover_with_actions = true,
         runnables = {
             use_telescope = true
         },
@@ -23,7 +27,7 @@ local opts = {
     -- see https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rust_analyzer
     server = {
         -- on_attach is a callback called when the language server attachs to the buffer
-        -- on_attach = on_attach,
+        on_attach = on_attach,
         capabilities = capabilities,
         settings = {
             -- to enable rust-analyzer settings visit:
