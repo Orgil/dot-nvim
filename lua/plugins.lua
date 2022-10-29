@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons'
   }
-  use 'abzcoding/tokyonight.nvim'
+  use 'folke/tokyonight.nvim'
   use 'EdenEast/nightfox.nvim'
   use {
     'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'
@@ -71,7 +71,7 @@ return require('packer').startup(function(use)
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'tpope/vim-repeat'
   use 'thinca/vim-visualstar'
-  use 'norcalli/nvim-colorizer.lua'
+  use 'NvChad/nvim-colorizer.lua'
   use 'ntpeters/vim-better-whitespace'
   use 'folke/zen-mode.nvim'
   use {'seblj/nvim-tabline',
