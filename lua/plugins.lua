@@ -40,15 +40,27 @@ return require('packer').startup(function(use)
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons"
   }
-  use 'dietrichm/lsp-colors.nvim'
+  use 'folke/lsp-colors.nvim'
   use 'glepnir/dashboard-nvim'
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
   use 'neovim/nvim-lspconfig'
+  use 'simnalamburt/vim-mundo'
+  use {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim"
+  }
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/nvim-cmp'
+  use {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+      {"nvim-lua/plenary.nvim"},
+      {"nvim-treesitter/nvim-treesitter"}
+    }
+  }
   use 'lukas-reineke/indent-blankline.nvim'
   use({
     'CosmicNvim/cosmic-ui',
@@ -101,6 +113,7 @@ return require('packer').startup(function(use)
     },
   }
   use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
   use 'farmergreg/vim-lastplace'

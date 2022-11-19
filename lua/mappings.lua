@@ -2,6 +2,9 @@ local map = require('utils').map
 local g = vim.g
 
 g.mapleader = ","
+g.mundo_right = 1
+g.mundo_width = 60
+g.mundo_preview_height = 40
 
 map('n', 'r', '<c-r>')
 
@@ -50,4 +53,5 @@ map('n', '<cr>', ':noh<cr>')
 -- switch last buffer
 map('n', '<leader><leader>', '<c-^>')
 
+map('n', '<f5>', ':MundoToggle<CR>')
 map('n', '<f10>', '<cmd>echo "hi:".synIDattr(synID(line("."),col("."),0),"name")<cr>')
