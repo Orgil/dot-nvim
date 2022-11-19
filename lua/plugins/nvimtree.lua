@@ -42,7 +42,7 @@ require'nvim-tree'.setup ({
     root_folder_modifier = ":t:r",
     icons= {
       webdev_colors = true,
-      git_placement = "before",
+      git_placement = "signcolumn",
       padding = " ",
       symlink_arrow = " ➛ ",
       show= {
@@ -77,6 +77,7 @@ require'nvim-tree'.setup ({
     }
   },
   view = {
+    signcolumn = "yes",
     mappings = {
       custom_only = true,
       list = {

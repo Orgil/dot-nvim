@@ -8,7 +8,7 @@ opt.backup = false
 opt.writebackup = false
 opt.swapfile = false
 opt.undofile = true
-opt.undodir= './vim/undo'
+opt.undodir= '~/.vim/undo'
 opt.spell = false
 opt.hidden = true
 opt.clipboard = 'unnamedplus'
@@ -46,6 +46,8 @@ opt.autoindent = true
 opt.background = 'dark'
 opt.termguicolors = true
 vim.g.tokyonight_sidebars = { "NvimTree" }
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.cmd[[:silent! colorscheme tokyonight]]
 vim.cmd[[hi link TroubleSignError DiagnosticSignError]]
