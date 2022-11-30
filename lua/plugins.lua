@@ -46,6 +46,7 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-ts-autotag'
   use 'neovim/nvim-lspconfig'
   use 'simnalamburt/vim-mundo'
+  use 'dnlhc/glance.nvim'
   use {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim"
@@ -54,6 +55,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/nvim-cmp'
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
   use {
     "ThePrimeagen/refactoring.nvim",
     requires = {

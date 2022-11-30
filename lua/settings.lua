@@ -32,11 +32,11 @@ opt.history = 1000
 opt.undolevels = 1000
 opt.gdefault = true
 opt.list = false
-opt.foldenable = false
-opt.foldmethod = 'expr'
+opt.foldenable = true
+opt.foldcolumn = '1'
 opt.foldlevel = 99
-opt.foldnestmax = 10
-opt.foldexpr = 'nvim_treesitter#foldexpr()'
+opt.foldlevelstart = 99
+
 opt.shortmess:append { c = true, S = true }
 opt.listchars = { tab = "›  ", trail = "·", precedes = "←", extends = "→",eol = "↲", nbsp = "␣" }
 opt.completeopt='menu,menuone,noselect'

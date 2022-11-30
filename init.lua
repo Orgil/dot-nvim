@@ -19,6 +19,8 @@ require('plugins.trouble')
 require('plugins.mason')
 require('plugins.dashboard')
 require('plugins.cmp')
+require('plugins.fold')
+require('plugins.glance')
 require('plugins.cosmic-ui')
 -- pairs must be below cmp
 require('plugins.pairs')
