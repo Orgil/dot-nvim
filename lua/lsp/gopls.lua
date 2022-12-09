@@ -1,4 +1,5 @@
 local lspconfig = require "lspconfig"
+local buf_map = require "utils".buffer_map
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -16,7 +17,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 	}
 }
 
-local on_attach_vim = function()
+local on_attach_vim = function(client, bufnr)
 	-- document_highlight()
   buf_map(bufnr, 'n', '<leader>a', '<cmd>lua require("cosmic-ui").code_actions()<cr>')
   buf_map(bufnr, 'v', '<leader>a', '<cmd>lua require("cosmic-ui").range_code_actions()<cr>')
